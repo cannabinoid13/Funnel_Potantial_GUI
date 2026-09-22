@@ -1,0 +1,50 @@
+section	parameter	value	unit_or_note
+production	time	200000	ps (200 ns)
+production	temperature	310	K
+production	pressure	1.01325	bar
+production	ensemble	NPT-MTK	isotropic
+production	timestep	0.002,0.002,0.006	ps; bonded, near, far
+production	random_seed	2007	deterministic initial velocities
+output	trajectory_interval	20	ps; about 10001 frames
+output	cvseq_interval	2	ps; about 100001 records
+output	energy_interval	2	ps
+output	simbox_interval	2	ps
+output	checkpoint_interval	500	ps
+output	maeff_interval	1000	ps
+metadynamics	biased_dimensions	1	axial z only
+metadynamics	initial_hill_height	0.25	kcal/mol
+metadynamics	hill_interval	2	ps
+metadynamics	sigma_z	0.50	Angstrom
+metadynamics	bias_factor_gamma	15	dimensionless
+metadynamics	ktemp	8.624466483	kcal/mol; (gamma-1)kBT at 310 K
+metadynamics	kernel_cutoff	9	Gaussian widths
+funnel	z_min	-0.9313	Angstrom; frozen reference geometry
+funnel	z_cc	23.4485	Angstrom; frozen reference geometry
+funnel	z_max	28.948553856514945	Angstrom; frozen reference geometry
+funnel	cylinder_radius	4.110265665681823	Angstrom; frozen reference geometry
+funnel	cone_slope	0.40890707118416053	tan(alpha); frozen reference geometry
+funnel	cone_half_angle	22.24	degree; descriptive only
+funnel	radial_force_constant	29.0	kcal/mol/Angstrom^2
+funnel	axial_force_constant	50.0	kcal/mol/Angstrom^2
+axis	frame_groups	O:399-405,U:528-533,V:424-430	chain A backbone N,CA,C,O; PBC-safe structural-core frame
+axis	frame_pair_lengths	11.154313925024129,18.371845295572427,18.651493355654367	OU,OV,UV Angstrom in this system; exact ffio masses
+axis	frame_perpendicular_length	17.64600182608874	Angstrom; Gram-Schmidt conditioning at t=0
+axis	axis_coefficients	-0.41674239298662524,-0.8969215372880964,-0.14784293637688242	u,v,w; normalized in POT
+axis	origin_coefficients	-10.418147459550303,2.0068810215727364,-8.260348044606244	u,v,w Angstrom
+axis	initial_axis	0.3997277548580135,-0.9089113780663901,-0.11873427819137787	unit vector from the frozen protein-relative frame
+axis	initial_origin	1.6612985960336033,-10.245141943749921,-5.061455841391394	Angstrom; Cartesian realization
+axis	initial_z	1.4353079460726115	Angstrom; ligand-specific starting COM coordinate
+axis	initial_rho	1.8267959316755318	Angstrom; ligand-specific starting COM coordinate
+axis	initial_allowed_radius	13.111615555867706	Angstrom
+axis	cross_ligand_equivalence_sha256	9fff95be335bd37b2d0a7bf18ef9ca8f1b4e9e5f7a26b7a06cfa39cea785a2f3	frozen reference lock
+axis	normalized_reference_pot_sha256	7ff59c32300e538998c6684b53160ad787b9fee2083751af21f804c60d8427b9	frozen reference lock
+axis	reference_G4N_cms_sha256	b24c0c3a642c7dbd7fc038632bf1344fcec7969dc5198db54debef4377755c8c	frozen reference lock
+axis	physical_geometry_sha256	20bdb179f05f83dd3dfbc0a253fa0b0d6d8b6079a0bc715f9520011249fc7f60	this system's t=0 realization
+ligand	heavy_AIDs	8286-8319	chain B; LIG1:1; 34 atoms
+monitor	online_interval	2	ps; COM/gate/rotamer diagnostics
+monitor	offline_interval	20	ps; DTR minimum distances
+monitor	default_contact_cutoff	4.0	Angstrom; analyzer option
+monitor	residues	Asp74,Trp86,Tyr124,Trp286,Phe297,Tyr337,Phe338,Tyr341	non-biased
+system	atom_count	41986	full-system CMS
+system	box_lengths	76.781247,84.400749,68.503793	orthorhombic Angstrom
+system	cms_sha256	76487d225429d22c93ebb73e87159d6a4e11568a89dc5c306e57c0669aaee189	input identity

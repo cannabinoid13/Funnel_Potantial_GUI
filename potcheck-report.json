@@ -1,0 +1,3939 @@
+[
+ {
+  "file": "tests/fixtures/arbitrary_names.pot",
+  "revision": "f57a0505f663d98af79d9251f5e206253674d7ca92028d2ab666a5edf8180f19",
+  "verdict": "Desmond validation not performed. This interface: 1 error, 2 warnings; not run: topology; the file does not parse here, which is a limit of this interface and not proof that Desmond would reject it.",
+  "layers": {
+   "syntax": {
+    "state": "error",
+    "note": "482 tokens, 28 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "f57a0505f663d98af79d9251f5e206253674d7ca92028d2ab666a5edf8180f19"
+   },
+   "model": {
+    "state": "passed",
+    "note": "28/28 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "f57a0505f663d98af79d9251f5e206253674d7ca92028d2ab666a5edf8180f19"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "20 names, 19 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "f57a0505f663d98af79d9251f5e206253674d7ca92028d2ab666a5edf8180f19"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "f57a0505f663d98af79d9251f5e206253674d7ca92028d2ab666a5edf8180f19"
+   },
+   "package": {
+    "state": "warning",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "f57a0505f663d98af79d9251f5e206253674d7ca92028d2ab666a5edf8180f19"
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "SYN001",
+    "layer": "syntax",
+    "severity": "error",
+    "line": 29,
+    "col": 1,
+    "message": "declarations belong at the top of the file: Desmond's grammar is 'header block', so this declaration after the first ordinary statement will be rejected by the engine",
+    "evidence": "static keeper(1);",
+    "blocks_export": true
+   },
+   {
+    "code": "MTD009",
+    "layer": "model",
+    "severity": "info",
+    "line": 19,
+    "col": 10,
+    "message": "zero-height meta(0, ...) reads the accumulated bias back; this is a probe, not a deposit",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD007",
+    "layer": "model",
+    "severity": "info",
+    "line": 21,
+    "col": 10,
+    "message": "well-tempered relation confirmed from the data flow for accumulator 0. kDT = 2.4943 kcal/mol, h0 = 0.239 kcal/mol",
+    "evidence": "the hill height reads accumulator 0 back through exp() with a negative coefficient; kDT = 2.4943 kcal/mol; h0 = 0.239 kcal/mol",
+    "blocks_export": false
+   },
+   {
+    "code": "PKG003",
+    "layer": "package",
+    "severity": "warning",
+    "line": 4,
+    "col": 0,
+    "message": "declare_meta writes 'kerseq', which does not follow the job name 'arbitrary_names'",
+    "evidence": "kerseq",
+    "blocks_export": false
+   },
+   {
+    "code": "PKG003",
+    "layer": "package",
+    "severity": "warning",
+    "line": 6,
+    "col": 0,
+    "message": "declare_output writes 'cvseq', which does not follow the job name 'arbitrary_names'",
+    "evidence": "cvseq",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 28,
+   "names": 20,
+   "reaching_potential": [
+    "anchor",
+    "axis_v",
+    "bias",
+    "exotic",
+    "extra",
+    "gap",
+    "grpA",
+    "grpB",
+    "hgt",
+    "kT_dt",
+    "lowgap",
+    "old_b",
+    "probe",
+    "prog",
+    "rg",
+    "spread",
+    "total",
+    "wall_l",
+    "wall_u"
+   ],
+   "selections": [
+    {
+     "name": "grpA",
+     "dim": null
+    },
+    {
+     "name": "grpB",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "probe",
+     "owner": "old_b",
+     "cvs": 2,
+     "hills": 3,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": ""
+    },
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "bias",
+     "cvs": 2,
+     "hills": 3,
+     "well_tempered": true,
+     "ktemp": 2.4943,
+     "h0": 0.239,
+     "evidence": "the hill height reads accumulator 0 back through exp() with a negative coefficient; kDT = 2.4943 kcal/mol; h0 = 0.239 kcal/mol"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "bias  (via total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    },
+    {
+     "label": "wall_u  (via total)",
+     "opaque": false,
+     "kinds": [
+      "wall"
+     ]
+    },
+    {
+     "label": "wall_l  (via total)",
+     "opaque": false,
+     "kinds": [
+      "wall"
+     ]
+    },
+    {
+     "label": "extra  (via total)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "SYN001",
+    "message": "declarations belong at the top of the file: Desmond's grammar is 'header block', so this declaration after the first ordinary statement will be rejected by the engine"
+   },
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/arrays_indexing.pot",
+  "revision": "0b4ea167fc9903fd82e0cab912662651e87effdc78c25c60d64dee936a9aacd0",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "495 tokens, 27 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "0b4ea167fc9903fd82e0cab912662651e87effdc78c25c60d64dee936a9aacd0"
+   },
+   "model": {
+    "state": "passed",
+    "note": "27/27 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "0b4ea167fc9903fd82e0cab912662651e87effdc78c25c60d64dee936a9aacd0"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "19 names, 19 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "0b4ea167fc9903fd82e0cab912662651e87effdc78c25c60d64dee936a9aacd0"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "0b4ea167fc9903fd82e0cab912662651e87effdc78c25c60d64dee936a9aacd0"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 27,
+   "names": 19,
+   "reaching_potential": [
+    "dx",
+    "dy",
+    "dz",
+    "first_gid",
+    "last_gid",
+    "mass_sum",
+    "mid",
+    "mid_gid",
+    "mid_z",
+    "p",
+    "probe_x",
+    "probe_y",
+    "probe_z",
+    "q",
+    "ref_xyz",
+    "sel",
+    "span",
+    "stacked",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    },
+    {
+     "name": "first_gid",
+     "dim": 1
+    },
+    {
+     "name": "last_gid",
+     "dim": 1
+    },
+    {
+     "name": "mass_sum",
+     "dim": 1
+    },
+    {
+     "name": "mid_gid",
+     "dim": 1
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "span  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * (probe_x + probe_y + probe_z)  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * mid  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * mass_sum  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * mid_z  (via v)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/bad_accumulator.pot",
+  "revision": "98d9545d48068f9dc6a09cd8477590924f1de7990d0b33d2643a5138ec1d3949",
+  "verdict": "Desmond validation not performed. This interface: 1 error, 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "191 tokens, 9 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "98d9545d48068f9dc6a09cd8477590924f1de7990d0b33d2643a5138ec1d3949"
+   },
+   "model": {
+    "state": "warning",
+    "note": "9/9 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "98d9545d48068f9dc6a09cd8477590924f1de7990d0b33d2643a5138ec1d3949"
+   },
+   "symbols": {
+    "state": "error",
+    "note": "4 names, 4 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "98d9545d48068f9dc6a09cd8477590924f1de7990d0b33d2643a5138ec1d3949"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "98d9545d48068f9dc6a09cd8477590924f1de7990d0b33d2643a5138ec1d3949"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 27,
+    "col": 10,
+    "message": "MetaD detected on accumulator 7; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD003",
+    "layer": "symbols",
+    "severity": "error",
+    "line": 27,
+    "col": 10,
+    "message": "meta(7, ...) refers to accumulator 7 but the file declares 1",
+    "evidence": "",
+    "blocks_export": true
+   }
+  ],
+  "structure": {
+   "statements": 9,
+   "names": 4,
+   "reaching_potential": [
+    "hub",
+    "lig",
+    "v_bias",
+    "z"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "hub",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 7,
+     "role": "bias",
+     "owner": "v_bias",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_bias",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "MTD003",
+    "message": "meta(7, ...) refers to accumulator 7 but the file declares 1"
+   },
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/blocks_series_static.pot",
+  "revision": "8994bf04951d4e039d00f70fc7c1ff7fe36bc500cdbcd2b041f311b8f77f85f0",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "372 tokens, 16 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8994bf04951d4e039d00f70fc7c1ff7fe36bc500cdbcd2b041f311b8f77f85f0"
+   },
+   "model": {
+    "state": "passed",
+    "note": "16/16 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8994bf04951d4e039d00f70fc7c1ff7fe36bc500cdbcd2b041f311b8f77f85f0"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "8 names, 5 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8994bf04951d4e039d00f70fc7c1ff7fe36bc500cdbcd2b041f311b8f77f85f0"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8994bf04951d4e039d00f70fc7c1ff7fe36bc500cdbcd2b041f311b8f77f85f0"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 16,
+   "names": 8,
+   "reaching_potential": [
+    "drift",
+    "last_span",
+    "shell",
+    "span",
+    "v_hold"
+   ],
+   "selections": [
+    {
+     "name": "shell",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v_hold",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/bom_utf8.pot",
+  "revision": "18dde0117922d1228bc5e9ad2bc5332829ca50779ff2fc210973c06855fffca7",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "139 tokens, 8 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18dde0117922d1228bc5e9ad2bc5332829ca50779ff2fc210973c06855fffca7"
+   },
+   "model": {
+    "state": "passed",
+    "note": "8/8 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18dde0117922d1228bc5e9ad2bc5332829ca50779ff2fc210973c06855fffca7"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "5 names, 5 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18dde0117922d1228bc5e9ad2bc5332829ca50779ff2fc210973c06855fffca7"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18dde0117922d1228bc5e9ad2bc5332829ca50779ff2fc210973c06855fffca7"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "SYN013",
+    "layer": "syntax",
+    "severity": "warning",
+    "line": 0,
+    "col": 0,
+    "message": "the file starts with a UTF-8 byte-order mark; it is preserved on save",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 8,
+   "names": 5,
+   "reaching_potential": [
+    "anchor",
+    "over",
+    "r",
+    "sel",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/comment_styles.pot",
+  "revision": "3195b148b74a80197e266a2ef67fb60583b413e3ea4cc071f8e925a34a59da0c",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "195 tokens, 9 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3195b148b74a80197e266a2ef67fb60583b413e3ea4cc071f8e925a34a59da0c"
+   },
+   "model": {
+    "state": "passed",
+    "note": "9/9 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3195b148b74a80197e266a2ef67fb60583b413e3ea4cc071f8e925a34a59da0c"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "6 names, 6 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3195b148b74a80197e266a2ef67fb60583b413e3ea4cc071f8e925a34a59da0c"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3195b148b74a80197e266a2ef67fb60583b413e3ea4cc071f8e925a34a59da0c"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "SYN006",
+    "layer": "syntax",
+    "severity": "warning",
+    "line": 42,
+    "col": 1,
+    "message": "this comment is the last thing in the file and is not followed by a newline; Desmond's lexer defines a comment as running up to a newline and rejects the file without one",
+    "evidence": "# Final line: a comment with no newline after it.  This is the one that breaks.",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 9,
+   "names": 6,
+   "reaching_potential": [
+    "anchor",
+    "k_wall",
+    "over",
+    "r",
+    "sel",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/crlf.pot",
+  "revision": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "37 tokens, 2 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "model": {
+    "state": "passed",
+    "note": "2/2 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "0 names, 0 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "package": {
+    "state": "warning",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "PKG003",
+    "layer": "package",
+    "severity": "warning",
+    "line": 1,
+    "col": 0,
+    "message": "declare_output writes 'minimal.cvseq', which does not follow the job name 'crlf'",
+    "evidence": "minimal.cvseq",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 2,
+   "names": 0,
+   "reaching_potential": [],
+   "selections": [],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "norm(center_of_mass(atomsel(\"atom. 1-4\")))",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/deep_nesting.pot",
+  "revision": "4c378c61398d40ccee63ee045a3a330138b988e135b725ef62a1f7b1e2c94474",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "494 tokens, 6 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4c378c61398d40ccee63ee045a3a330138b988e135b725ef62a1f7b1e2c94474"
+   },
+   "model": {
+    "state": "passed",
+    "note": "6/6 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4c378c61398d40ccee63ee045a3a330138b988e135b725ef62a1f7b1e2c94474"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "3 names, 3 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4c378c61398d40ccee63ee045a3a330138b988e135b725ef62a1f7b1e2c94474"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4c378c61398d40ccee63ee045a3a330138b988e135b725ef62a1f7b1e2c94474"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 6,
+   "names": 3,
+   "reaching_potential": [
+    "base",
+    "deep",
+    "sel"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "base  (via deep)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "1.0  (via deep)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/dependency_cycle.pot",
+  "revision": "50bbbf5959212f17475516f30fc795357a0005b10d92b070c338d15dd2af469f",
+  "verdict": "Desmond validation not performed. This interface: 1 error; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "130 tokens, 9 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "50bbbf5959212f17475516f30fc795357a0005b10d92b070c338d15dd2af469f"
+   },
+   "model": {
+    "state": "passed",
+    "note": "9/9 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "50bbbf5959212f17475516f30fc795357a0005b10d92b070c338d15dd2af469f"
+   },
+   "symbols": {
+    "state": "error",
+    "note": "5 names, 5 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "50bbbf5959212f17475516f30fc795357a0005b10d92b070c338d15dd2af469f"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "50bbbf5959212f17475516f30fc795357a0005b10d92b070c338d15dd2af469f"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "SEM003",
+    "layer": "symbols",
+    "severity": "error",
+    "line": 14,
+    "col": 1,
+    "message": "definitions depend on each other in a cycle: a -> b -> a",
+    "evidence": "a -> b -> a",
+    "blocks_export": true
+   }
+  ],
+  "structure": {
+   "statements": 9,
+   "names": 5,
+   "reaching_potential": [
+    "a",
+    "b",
+    "r",
+    "sel",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "SEM003",
+    "message": "definitions depend on each other in a cycle: a -> b -> a"
+   },
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/dimension_mismatch.pot",
+  "revision": "768af044e89dafd21ee9d9fb54c35137c723835cd654e6335b0fd991dc1a1f49",
+  "verdict": "Desmond validation not performed. This interface: 2 errors, 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "226 tokens, 11 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "768af044e89dafd21ee9d9fb54c35137c723835cd654e6335b0fd991dc1a1f49"
+   },
+   "model": {
+    "state": "warning",
+    "note": "11/11 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "768af044e89dafd21ee9d9fb54c35137c723835cd654e6335b0fd991dc1a1f49"
+   },
+   "symbols": {
+    "state": "error",
+    "note": "7 names, 7 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "768af044e89dafd21ee9d9fb54c35137c723835cd654e6335b0fd991dc1a1f49"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "768af044e89dafd21ee9d9fb54c35137c723835cd654e6335b0fd991dc1a1f49"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 33,
+    "col": 10,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD004",
+    "layer": "symbols",
+    "severity": "error",
+    "line": 33,
+    "col": 10,
+    "message": "declare_meta says dimension = 2 but this call passes 3 collective variable(s)",
+    "evidence": "array(cv_x, cv_y, cv_z)",
+    "blocks_export": true
+   },
+   {
+    "code": "MTD005",
+    "layer": "symbols",
+    "severity": "error",
+    "line": 33,
+    "col": 10,
+    "message": "the hill array should hold one height and 2 width(s), that is 3 values; this call passes 4",
+    "evidence": "array(0.05, 0.40, 0.40, 0.55)",
+    "blocks_export": true
+   }
+  ],
+  "structure": {
+   "statements": 11,
+   "names": 7,
+   "reaching_potential": [
+    "cv_x",
+    "cv_y",
+    "cv_z",
+    "hub",
+    "lig",
+    "sep",
+    "v_bias"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "hub",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_bias",
+     "cvs": 3,
+     "hills": 4,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_bias",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "MTD004",
+    "message": "declare_meta says dimension = 2 but this call passes 3 collective variable(s)"
+   },
+   {
+    "code": "MTD005",
+    "message": "the hill array should hold one height and 2 width(s), that is 3 values; this call passes 4"
+   },
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/duplicate_assign.pot",
+  "revision": "4a819bcb0b7c18782d83760b8f5105e36e6d0dbc2fcd1a96bb0765262db20e18",
+  "verdict": "Desmond validation not performed. This interface: 1 error; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "154 tokens, 10 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4a819bcb0b7c18782d83760b8f5105e36e6d0dbc2fcd1a96bb0765262db20e18"
+   },
+   "model": {
+    "state": "passed",
+    "note": "10/10 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4a819bcb0b7c18782d83760b8f5105e36e6d0dbc2fcd1a96bb0765262db20e18"
+   },
+   "symbols": {
+    "state": "error",
+    "note": "6 names, 6 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4a819bcb0b7c18782d83760b8f5105e36e6d0dbc2fcd1a96bb0765262db20e18"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "4a819bcb0b7c18782d83760b8f5105e36e6d0dbc2fcd1a96bb0765262db20e18"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "SEM002",
+    "layer": "symbols",
+    "severity": "error",
+    "line": 16,
+    "col": 1,
+    "message": "`k_wall` is assigned again; Desmond allows a single assignment per name in a scope (first at line 11)",
+    "evidence": "k_wall = 50.0;",
+    "blocks_export": true
+   }
+  ],
+  "structure": {
+   "statements": 10,
+   "names": 6,
+   "reaching_potential": [
+    "anchor",
+    "k_wall",
+    "over",
+    "r",
+    "sel",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "SEM002",
+    "message": "`k_wall` is assigned again; Desmond allows a single assignment per name in a scope (first at line 11)"
+   },
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/empty_selection.pot",
+  "revision": "3bd9be95227769ff731082e139ec1eb3cbf1cab42cb7483cd3c45d42504ad1ed",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "217 tokens, 14 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3bd9be95227769ff731082e139ec1eb3cbf1cab42cb7483cd3c45d42504ad1ed"
+   },
+   "model": {
+    "state": "passed",
+    "note": "14/14 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3bd9be95227769ff731082e139ec1eb3cbf1cab42cb7483cd3c45d42504ad1ed"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "9 names, 9 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3bd9be95227769ff731082e139ec1eb3cbf1cab42cb7483cd3c45d42504ad1ed"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "3bd9be95227769ff731082e139ec1eb3cbf1cab42cb7483cd3c45d42504ad1ed"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 14,
+   "names": 9,
+   "reaching_potential": [
+    "anchor",
+    "anchor_com",
+    "ghost",
+    "past_end",
+    "r_ghost",
+    "r_past",
+    "r_void",
+    "v",
+    "void_sel"
+   ],
+   "selections": [
+    {
+     "name": "ghost",
+     "dim": null
+    },
+    {
+     "name": "void_sel",
+     "dim": null
+    },
+    {
+     "name": "past_end",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "r_ghost  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "r_void  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "r_past  (via v)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/funnel_general.pot",
+  "revision": "8224ab25dd0b25ae166f540a36775c0f1cf0474b9f2f2ac50cb2fa528bfe2f36",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "709 tokens, 48 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8224ab25dd0b25ae166f540a36775c0f1cf0474b9f2f2ac50cb2fa528bfe2f36"
+   },
+   "model": {
+    "state": "warning",
+    "note": "48/48 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8224ab25dd0b25ae166f540a36775c0f1cf0474b9f2f2ac50cb2fa528bfe2f36"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "37 names, 37 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8224ab25dd0b25ae166f540a36775c0f1cf0474b9f2f2ac50cb2fa528bfe2f36"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "8224ab25dd0b25ae166f540a36775c0f1cf0474b9f2f2ac50cb2fa528bfe2f36"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 81,
+    "col": 11,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 48,
+   "names": 37,
+   "reaching_potential": [
+    "apex",
+    "apex_shift",
+    "depth",
+    "depth_floor",
+    "depth_roof",
+    "edge_one",
+    "edge_two",
+    "flare",
+    "k_floor",
+    "k_roof",
+    "k_side",
+    "lever",
+    "mouth_excess",
+    "mouth_hub",
+    "mouth_ring",
+    "over",
+    "payload",
+    "payload_hub",
+    "permitted",
+    "plane_normal",
+    "side",
+    "side_over",
+    "side_vec",
+    "sleeve_radius",
+    "spindle",
+    "spindle_raw",
+    "throat_depth",
+    "throat_hub",
+    "throat_ring",
+    "tilt_hub",
+    "tilt_ring",
+    "under",
+    "v_floor",
+    "v_hills",
+    "v_roof",
+    "v_side",
+    "v_total"
+   ],
+   "selections": [
+    {
+     "name": "payload",
+     "dim": null
+    },
+    {
+     "name": "mouth_ring",
+     "dim": null
+    },
+    {
+     "name": "throat_ring",
+     "dim": null
+    },
+    {
+     "name": "tilt_ring",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_hills",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_side  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_floor  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_roof  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_hills  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/future_function.pot",
+  "revision": "5cc82d05c6d4ce3a36b69c4e8881beb13059893063564e4ff3d6a794c180ebad",
+  "verdict": "Desmond validation not performed. This interface: 3 warnings; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "304 tokens, 14 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "5cc82d05c6d4ce3a36b69c4e8881beb13059893063564e4ff3d6a794c180ebad"
+   },
+   "model": {
+    "state": "warning",
+    "note": "14/14 statements modelled (100%), 2 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "5cc82d05c6d4ce3a36b69c4e8881beb13059893063564e4ff3d6a794c180ebad"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "9 names, 9 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "5cc82d05c6d4ce3a36b69c4e8881beb13059893063564e4ff3d6a794c180ebad"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "5cc82d05c6d4ce3a36b69c4e8881beb13059893063564e4ff3d6a794c180ebad"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MOD003",
+    "layer": "model",
+    "severity": "warning",
+    "line": 30,
+    "col": 7,
+    "message": "`quantum_cv()` is not in the 2025-3 function registry; it is preserved unchanged and left for the official validator to judge",
+    "evidence": "quantum_cv(lig, 0.35, \"path_integral\")",
+    "blocks_export": false
+   },
+   {
+    "code": "MOD003",
+    "layer": "model",
+    "severity": "warning",
+    "line": 33,
+    "col": 8,
+    "message": "`smart_wall()` is not in the 2025-3 function registry; it is preserved unchanged and left for the official validator to judge",
+    "evidence": "smart_wall(z, 4.0, 25.0, 2)",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 36,
+    "col": 10,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 14,
+   "names": 9,
+   "reaching_potential": [
+    "hub",
+    "lig",
+    "over",
+    "qcv",
+    "v_bias",
+    "v_plain",
+    "v_total",
+    "wall",
+    "z"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "hub",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_bias",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_bias  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    },
+    {
+     "label": "v_plain  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "wall  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.01 * qcv  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [
+    "quantum_cv",
+    "smart_wall"
+   ],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/ifelse_chains.pot",
+  "revision": "18171c351323b88d92a071b7cd4b5503a0a0b331349703ae3f8a5ba35cbb47ce",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "456 tokens, 19 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18171c351323b88d92a071b7cd4b5503a0a0b331349703ae3f8a5ba35cbb47ce"
+   },
+   "model": {
+    "state": "passed",
+    "note": "19/19 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18171c351323b88d92a071b7cd4b5503a0a0b331349703ae3f8a5ba35cbb47ce"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "11 names, 11 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18171c351323b88d92a071b7cd4b5503a0a0b331349703ae3f8a5ba35cbb47ce"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "18171c351323b88d92a071b7cd4b5503a0a0b331349703ae3f8a5ba35cbb47ce"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 19,
+   "names": 11,
+   "reaching_potential": [
+    "gap",
+    "hub",
+    "k_band",
+    "probe",
+    "r",
+    "r_target",
+    "regime",
+    "shaped",
+    "soft",
+    "v",
+    "window"
+   ],
+   "selections": [
+    {
+     "name": "probe",
+     "dim": null
+    },
+    {
+     "name": "hub",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "0.5 * k_band * gap^2  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * shaped  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * window  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * soft  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.001 * regime  (via v)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/metad_1d.pot",
+  "revision": "39f9dc833140264b89e98e3f000c1c0f45b79d4cb2eb5a49c1d6ef417c982a7e",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "204 tokens, 12 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "39f9dc833140264b89e98e3f000c1c0f45b79d4cb2eb5a49c1d6ef417c982a7e"
+   },
+   "model": {
+    "state": "warning",
+    "note": "12/12 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "39f9dc833140264b89e98e3f000c1c0f45b79d4cb2eb5a49c1d6ef417c982a7e"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "7 names, 7 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "39f9dc833140264b89e98e3f000c1c0f45b79d4cb2eb5a49c1d6ef417c982a7e"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "39f9dc833140264b89e98e3f000c1c0f45b79d4cb2eb5a49c1d6ef417c982a7e"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 26,
+    "col": 10,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 12,
+   "names": 7,
+   "reaching_potential": [
+    "cv_dist",
+    "hill_height",
+    "hill_width",
+    "lig",
+    "pocket",
+    "sep_vec",
+    "v_bias"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "pocket",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_bias",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_bias",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/metad_2d_wt.pot",
+  "revision": "67b10bfb21f0f4871f7af8ac4b6a4aa8abe09ebd01d86ac3586b2039f4adeb15",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "493 tokens, 37 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "67b10bfb21f0f4871f7af8ac4b6a4aa8abe09ebd01d86ac3586b2039f4adeb15"
+   },
+   "model": {
+    "state": "passed",
+    "note": "37/37 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "67b10bfb21f0f4871f7af8ac4b6a4aa8abe09ebd01d86ac3586b2039f4adeb15"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "30 names, 30 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "67b10bfb21f0f4871f7af8ac4b6a4aa8abe09ebd01d86ac3586b2039f4adeb15"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "67b10bfb21f0f4871f7af8ac4b6a4aa8abe09ebd01d86ac3586b2039f4adeb15"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD009",
+    "layer": "model",
+    "severity": "info",
+    "line": 51,
+    "col": 17,
+    "message": "zero-height meta(0, ...) reads the accumulated bias back; this is a probe, not a deposit",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD007",
+    "layer": "model",
+    "severity": "info",
+    "line": 62,
+    "col": 10,
+    "message": "well-tempered relation confirmed from the data flow for accumulator 0. kDT = 8.62447 kcal/mol, h0 = 0.1 kcal/mol",
+    "evidence": "the hill height reads accumulator 0 back through exp() with a negative coefficient; kDT = 8.62447 kcal/mol; h0 = 0.1 kcal/mol",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 37,
+   "names": 30,
+   "reaching_potential": [
+    "bias_factor",
+    "boltzmann",
+    "core",
+    "core_com",
+    "cv_axial",
+    "cv_pair",
+    "cv_radial",
+    "delta_t",
+    "deposit",
+    "excess_factor",
+    "guide",
+    "guide_hat",
+    "h_initial",
+    "h_now",
+    "lateral",
+    "lig",
+    "lig_com",
+    "neg_delta_t",
+    "offset",
+    "probe_widths",
+    "sim_temp",
+    "site",
+    "site_com",
+    "tempering",
+    "tempering_arg",
+    "thermal",
+    "v_accumulated",
+    "v_bias",
+    "width_axial",
+    "width_radial"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "site",
+     "dim": null
+    },
+    {
+     "name": "core",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "probe",
+     "owner": "v_accumulated",
+     "cvs": 2,
+     "hills": 3,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": ""
+    },
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_bias",
+     "cvs": 2,
+     "hills": 3,
+     "well_tempered": true,
+     "ktemp": 8.624465793999999,
+     "h0": 0.1,
+     "evidence": "the hill height reads accumulator 0 back through exp() with a negative coefficient; kDT = 8.62447 kcal/mol; h0 = 0.1 kcal/mol"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_bias",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/metad_3d.pot",
+  "revision": "ca14640f621eea3170ca726361d47ecba1d9683214ef02af8274ebaa6388028e",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "283 tokens, 16 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ca14640f621eea3170ca726361d47ecba1d9683214ef02af8274ebaa6388028e"
+   },
+   "model": {
+    "state": "warning",
+    "note": "16/16 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ca14640f621eea3170ca726361d47ecba1d9683214ef02af8274ebaa6388028e"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "8 names, 7 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ca14640f621eea3170ca726361d47ecba1d9683214ef02af8274ebaa6388028e"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ca14640f621eea3170ca726361d47ecba1d9683214ef02af8274ebaa6388028e"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 32,
+    "col": 10,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 16,
+   "names": 8,
+   "reaching_potential": [
+    "cv_x",
+    "cv_y",
+    "cv_z",
+    "lig",
+    "ref",
+    "sep",
+    "v_bias"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "ref",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_bias",
+     "cvs": 3,
+     "hills": 4,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_bias",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/meta_in_string.pot",
+  "revision": "44ac6c0f9b032cd4e4d3126f52a966c4314dcd0702d50a28a5224e1c79fd9826",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "254 tokens, 19 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "44ac6c0f9b032cd4e4d3126f52a966c4314dcd0702d50a28a5224e1c79fd9826"
+   },
+   "model": {
+    "state": "passed",
+    "note": "19/19 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "44ac6c0f9b032cd4e4d3126f52a966c4314dcd0702d50a28a5224e1c79fd9826"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "12 names, 10 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "44ac6c0f9b032cd4e4d3126f52a966c4314dcd0702d50a28a5224e1c79fd9826"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "44ac6c0f9b032cd4e4d3126f52a966c4314dcd0702d50a28a5224e1c79fd9826"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 19,
+   "names": 12,
+   "reaching_potential": [
+    "anchor",
+    "k_wall",
+    "meta_in_string_note",
+    "metadata",
+    "metadynamics_disabled",
+    "over",
+    "probe",
+    "v_total",
+    "v_wall",
+    "z"
+   ],
+   "selections": [
+    {
+     "name": "probe",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v_wall  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "meta_in_string_note * metadynamics_disabled  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/minimal.pot",
+  "revision": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "37 tokens, 2 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "model": {
+    "state": "passed",
+    "note": "2/2 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "0 names, 0 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c9e484d386ae012a569c96ed8dbcc373c9a1aad14260732121cca120cb75fa65"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 2,
+   "names": 0,
+   "reaching_potential": [],
+   "selections": [],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "norm(center_of_mass(atomsel(\"atom. 1-4\")))",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/mixed_endings.pot",
+  "revision": "ad411cced8ad81459d362729baaf8c93cd3628088fa547acef209a4c1b102093",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "135 tokens, 8 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ad411cced8ad81459d362729baaf8c93cd3628088fa547acef209a4c1b102093"
+   },
+   "model": {
+    "state": "passed",
+    "note": "8/8 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ad411cced8ad81459d362729baaf8c93cd3628088fa547acef209a4c1b102093"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "5 names, 5 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ad411cced8ad81459d362729baaf8c93cd3628088fa547acef209a4c1b102093"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "ad411cced8ad81459d362729baaf8c93cd3628088fa547acef209a4c1b102093"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "SYN014",
+    "layer": "syntax",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "the file mixes LF and CRLF line endings; they are preserved exactly as they are",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 8,
+   "names": 5,
+   "reaching_potential": [
+    "anchor",
+    "over",
+    "r",
+    "sel",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/multi_accumulator.pot",
+  "revision": "9aab800b90a6fd5d301e23a44def940a82614d850a1e94d3876a94278db75db9",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "541 tokens, 32 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "9aab800b90a6fd5d301e23a44def940a82614d850a1e94d3876a94278db75db9"
+   },
+   "model": {
+    "state": "warning",
+    "note": "32/32 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "9aab800b90a6fd5d301e23a44def940a82614d850a1e94d3876a94278db75db9"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "22 names, 22 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "9aab800b90a6fd5d301e23a44def940a82614d850a1e94d3876a94278db75db9"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "9aab800b90a6fd5d301e23a44def940a82614d850a1e94d3876a94278db75db9"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD009",
+    "layer": "model",
+    "severity": "info",
+    "line": 47,
+    "col": 17,
+    "message": "zero-height meta(0, ...) reads the accumulated bias back; this is a probe, not a deposit",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD007",
+    "layer": "model",
+    "severity": "info",
+    "line": 49,
+    "col": 13,
+    "message": "well-tempered relation confirmed from the data flow for accumulator 0. kDT = 8.62447 kcal/mol, h0 = 0.1 kcal/mol",
+    "evidence": "the hill height reads accumulator 0 back through exp() with a negative coefficient; kDT = 8.62447 kcal/mol; h0 = 0.1 kcal/mol",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 55,
+    "col": 13,
+    "message": "MetaD detected on accumulator 1; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 32,
+   "names": 22,
+   "reaching_potential": [
+    "axis_hat",
+    "axis_raw",
+    "core",
+    "core_com",
+    "cv_axial",
+    "cv_perp",
+    "cv_radial",
+    "disp",
+    "h_pathway",
+    "ktemp_pathway",
+    "lig",
+    "lig_com",
+    "pathway_cvs",
+    "phi",
+    "site",
+    "site_com",
+    "tors",
+    "torsion_cvs",
+    "v_pathway",
+    "v_pathway_old",
+    "v_torsion",
+    "v_total"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "site",
+     "dim": null
+    },
+    {
+     "name": "core",
+     "dim": null
+    },
+    {
+     "name": "tors",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "probe",
+     "owner": "v_pathway_old",
+     "cvs": 2,
+     "hills": 3,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": ""
+    },
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_pathway",
+     "cvs": 2,
+     "hills": 3,
+     "well_tempered": true,
+     "ktemp": 8.624466483,
+     "h0": 0.1,
+     "evidence": "the hill height reads accumulator 0 back through exp() with a negative coefficient; kDT = 8.62447 kcal/mol; h0 = 0.1 kcal/mol"
+    },
+    {
+     "accumulator": 1,
+     "role": "bias",
+     "owner": "v_torsion",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_pathway  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    },
+    {
+     "label": "v_torsion  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/multiline_calls.pot",
+  "revision": "c35095594ec1dd938a38e9b585aec17c007da20156092c7e7144e01915da34e5",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "361 tokens, 13 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c35095594ec1dd938a38e9b585aec17c007da20156092c7e7144e01915da34e5"
+   },
+   "model": {
+    "state": "warning",
+    "note": "13/13 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c35095594ec1dd938a38e9b585aec17c007da20156092c7e7144e01915da34e5"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "8 names, 8 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c35095594ec1dd938a38e9b585aec17c007da20156092c7e7144e01915da34e5"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c35095594ec1dd938a38e9b585aec17c007da20156092c7e7144e01915da34e5"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 35,
+    "col": 10,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 13,
+   "names": 8,
+   "reaching_potential": [
+    "cv_r",
+    "cv_z",
+    "gap",
+    "hub",
+    "lig",
+    "v_bias",
+    "v_total",
+    "v_wall"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "hub",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_bias",
+     "cvs": 2,
+     "hills": 3,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_bias  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    },
+    {
+     "label": "v_wall  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "wall"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/nested_meta.pot",
+  "revision": "522bc45ad0b208041f39a6bce2362f6b55a5cbaea51af371ed133a59f84c7e19",
+  "verdict": "Desmond validation not performed. This interface: 6 warnings; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "467 tokens, 16 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "522bc45ad0b208041f39a6bce2362f6b55a5cbaea51af371ed133a59f84c7e19"
+   },
+   "model": {
+    "state": "warning",
+    "note": "16/16 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "522bc45ad0b208041f39a6bce2362f6b55a5cbaea51af371ed133a59f84c7e19"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "10 names, 10 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "522bc45ad0b208041f39a6bce2362f6b55a5cbaea51af371ed133a59f84c7e19"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "522bc45ad0b208041f39a6bce2362f6b55a5cbaea51af371ed133a59f84c7e19"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 31,
+    "col": 29,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 34,
+    "col": 23,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 41,
+    "col": 28,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 44,
+    "col": 22,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 49,
+    "col": 11,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   },
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 52,
+    "col": 28,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 16,
+   "names": 10,
+   "reaching_potential": [
+    "buried_in_block",
+    "buried_in_call",
+    "buried_in_else",
+    "buried_in_series",
+    "buried_in_then",
+    "cv",
+    "gate",
+    "hub",
+    "lig",
+    "v_total"
+   ],
+   "selections": [
+    {
+     "name": "lig",
+     "dim": null
+    },
+    {
+     "name": "hub",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "buried_in_call",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    },
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "buried_in_then",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    },
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "buried_in_else",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    },
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "buried_in_series",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    },
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "buried_in_block",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    },
+    {
+     "accumulator": 0,
+     "role": "diagnostic",
+     "owner": "",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "buried_in_call  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    },
+    {
+     "label": "buried_in_then  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta",
+      "wall"
+     ]
+    },
+    {
+     "label": "buried_in_else  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta",
+      "wall"
+     ]
+    },
+    {
+     "label": "buried_in_series  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    },
+    {
+     "label": "buried_in_block  (via v_total)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/no_final_newline.pot",
+  "revision": "e83588bce4a50602e22805a243299df96b85427f51fd4a13a8db9e8a3528d709",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "141 tokens, 8 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e83588bce4a50602e22805a243299df96b85427f51fd4a13a8db9e8a3528d709"
+   },
+   "model": {
+    "state": "passed",
+    "note": "8/8 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e83588bce4a50602e22805a243299df96b85427f51fd4a13a8db9e8a3528d709"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "5 names, 5 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e83588bce4a50602e22805a243299df96b85427f51fd4a13a8db9e8a3528d709"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e83588bce4a50602e22805a243299df96b85427f51fd4a13a8db9e8a3528d709"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 8,
+   "names": 5,
+   "reaching_potential": [
+    "anchor",
+    "over",
+    "r",
+    "sel",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/no_metad.pot",
+  "revision": "639ae61966d0f9e611d9761dc2a813ab7710eaf7e967ab17dc872a8997e43ea3",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "271 tokens, 18 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "639ae61966d0f9e611d9761dc2a813ab7710eaf7e967ab17dc872a8997e43ea3"
+   },
+   "model": {
+    "state": "passed",
+    "note": "18/18 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "639ae61966d0f9e611d9761dc2a813ab7710eaf7e967ab17dc872a8997e43ea3"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "13 names, 13 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "639ae61966d0f9e611d9761dc2a813ab7710eaf7e967ab17dc872a8997e43ea3"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "639ae61966d0f9e611d9761dc2a813ab7710eaf7e967ab17dc872a8997e43ea3"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 18,
+   "names": 13,
+   "reaching_potential": [
+    "com_a",
+    "com_b",
+    "grp_a",
+    "grp_b",
+    "hi_gap",
+    "k_harm",
+    "lo_gap",
+    "r_zero",
+    "sep",
+    "v_harm",
+    "v_hi",
+    "v_lo",
+    "v_total"
+   ],
+   "selections": [
+    {
+     "name": "grp_a",
+     "dim": null
+    },
+    {
+     "name": "grp_b",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v_harm  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_hi  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_lo  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/scientific_numbers.pot",
+  "revision": "e10435a13067d887f38c95af9400801cb053fd030108f49b376649c867cd4006",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "375 tokens, 29 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e10435a13067d887f38c95af9400801cb053fd030108f49b376649c867cd4006"
+   },
+   "model": {
+    "state": "passed",
+    "note": "29/29 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e10435a13067d887f38c95af9400801cb053fd030108f49b376649c867cd4006"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "24 names, 24 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e10435a13067d887f38c95af9400801cb053fd030108f49b376649c867cd4006"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "e10435a13067d887f38c95af9400801cb053fd030108f49b376649c867cd4006"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 29,
+   "names": 24,
+   "reaching_potential": [
+    "big_signed",
+    "big_unsigned",
+    "double_prefix",
+    "int_form",
+    "lower_e",
+    "neg_exponent_upper",
+    "neg_prefix",
+    "neg_spaced",
+    "plain_decimal",
+    "r",
+    "sel",
+    "sum_large",
+    "sum_neg",
+    "sum_plain",
+    "sum_small",
+    "tiny",
+    "tiny_dotted",
+    "trailing_dot",
+    "upper_e",
+    "v",
+    "very_large",
+    "very_small",
+    "zero_float",
+    "zero_form"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "r  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.0 * sum_small  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.0 * sum_large  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.0 * sum_plain  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.0 * sum_neg  (via v)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "0.0 * very_large  (via v)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/undefined_symbol.pot",
+  "revision": "383586cdab06c8488748ed84964f1214b5b01284c2e1e81f444f5972ab09598a",
+  "verdict": "Desmond validation not performed. This interface: 1 error; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "144 tokens, 9 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "383586cdab06c8488748ed84964f1214b5b01284c2e1e81f444f5972ab09598a"
+   },
+   "model": {
+    "state": "passed",
+    "note": "9/9 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "383586cdab06c8488748ed84964f1214b5b01284c2e1e81f444f5972ab09598a"
+   },
+   "symbols": {
+    "state": "error",
+    "note": "6 names, 6 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "383586cdab06c8488748ed84964f1214b5b01284c2e1e81f444f5972ab09598a"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "383586cdab06c8488748ed84964f1214b5b01284c2e1e81f444f5972ab09598a"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   },
+   {
+    "code": "SEM001",
+    "layer": "symbols",
+    "severity": "error",
+    "line": 15,
+    "col": 15,
+    "message": "`ghost_offset` is used but never defined",
+    "evidence": "ghost_offset",
+    "blocks_export": true
+   }
+  ],
+  "structure": {
+   "statements": 9,
+   "names": 6,
+   "reaching_potential": [
+    "anchor",
+    "over",
+    "r",
+    "sel",
+    "shifted",
+    "v"
+   ],
+   "selections": [
+    {
+     "name": "sel",
+     "dim": null
+    },
+    {
+     "name": "anchor",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "SEM001",
+    "message": "`ghost_offset` is used but never defined"
+   },
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/unicode_comments.pot",
+  "revision": "c62b235c17884d62782b6bc1d289558d39469b41ca63fe23a40f45506ce12b3d",
+  "verdict": "Desmond validation not performed. This interface: 1 warning; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "296 tokens, 15 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c62b235c17884d62782b6bc1d289558d39469b41ca63fe23a40f45506ce12b3d"
+   },
+   "model": {
+    "state": "warning",
+    "note": "15/15 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c62b235c17884d62782b6bc1d289558d39469b41ca63fe23a40f45506ce12b3d"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "9 names, 9 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c62b235c17884d62782b6bc1d289558d39469b41ca63fe23a40f45506ce12b3d"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "c62b235c17884d62782b6bc1d289558d39469b41ca63fe23a40f45506ce12b3d"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD008",
+    "layer": "model",
+    "severity": "warning",
+    "line": 40,
+    "col": 10,
+    "message": "MetaD detected on accumulator 0; well-tempered construction not confirmed",
+    "evidence": "no exp() in the hill height's data flow",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 15,
+   "names": 9,
+   "reaching_potential": [
+    "cekirdek",
+    "duvar_esigi",
+    "eksen_ham",
+    "ligand",
+    "mesafe",
+    "tasma",
+    "toplam",
+    "v_duvar",
+    "v_tepe"
+   ],
+   "selections": [
+    {
+     "name": "ligand",
+     "dim": null
+    },
+    {
+     "name": "cekirdek",
+     "dim": null
+    }
+   ],
+   "meta_calls": [
+    {
+     "accumulator": 0,
+     "role": "bias",
+     "owner": "v_tepe",
+     "cvs": 1,
+     "hills": 2,
+     "well_tempered": false,
+     "ktemp": null,
+     "h0": null,
+     "evidence": "no exp() in the hill height's data flow"
+    }
+   ],
+   "contributions": [
+    {
+     "label": "v_duvar  (via toplam)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_tepe  (via toplam)",
+     "opaque": false,
+     "kinds": [
+      "meta"
+     ]
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ },
+ {
+  "file": "tests/fixtures/walls_only.pot",
+  "revision": "b6800c4e7b915eea722bf58dae6b7df6de2df12c97788782a250cfc0b9b12f8d",
+  "verdict": "Desmond validation not performed. This interface: nothing to report; not run: topology, package.",
+  "layers": {
+   "syntax": {
+    "state": "passed",
+    "note": "486 tokens, 29 statements",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "b6800c4e7b915eea722bf58dae6b7df6de2df12c97788782a250cfc0b9b12f8d"
+   },
+   "model": {
+    "state": "passed",
+    "note": "29/29 statements modelled (100%), 0 unrecognised function(s)",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "b6800c4e7b915eea722bf58dae6b7df6de2df12c97788782a250cfc0b9b12f8d"
+   },
+   "symbols": {
+    "state": "passed",
+    "note": "18 names, 18 reach the potential",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "b6800c4e7b915eea722bf58dae6b7df6de2df12c97788782a250cfc0b9b12f8d"
+   },
+   "topology": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "official": {
+    "state": "not_run",
+    "note": "",
+    "ran_at": "",
+    "source_rev": ""
+   },
+   "lint": {
+    "state": "passed",
+    "note": "",
+    "ran_at": "2026-08-28T20:57:39Z",
+    "source_rev": "b6800c4e7b915eea722bf58dae6b7df6de2df12c97788782a250cfc0b9b12f8d"
+   },
+   "package": {
+    "state": "not_run",
+    "note": "no .msj, .cfg, .sh or .cms alongside this potential; only its own declarations were checked",
+    "ran_at": "",
+    "source_rev": ""
+   }
+  },
+  "diagnostics": [
+   {
+    "code": "MTD001",
+    "layer": "model",
+    "severity": "info",
+    "line": 0,
+    "col": 0,
+    "message": "no meta() call was found, so this file applies no metadynamics bias",
+    "evidence": "",
+    "blocks_export": false
+   }
+  ],
+  "structure": {
+   "statements": 29,
+   "names": 18,
+   "reaching_potential": [
+    "anchor",
+    "bot_under",
+    "far_over",
+    "hinge",
+    "probe",
+    "quart_over",
+    "r_main",
+    "r_side",
+    "side_over",
+    "tip",
+    "top_over",
+    "v_bot",
+    "v_far",
+    "v_quart",
+    "v_side",
+    "v_soft",
+    "v_top",
+    "v_total"
+   ],
+   "selections": [
+    {
+     "name": "anchor",
+     "dim": null
+    },
+    {
+     "name": "probe",
+     "dim": null
+    },
+    {
+     "name": "tip",
+     "dim": null
+    },
+    {
+     "name": "hinge",
+     "dim": null
+    }
+   ],
+   "meta_calls": [],
+   "contributions": [
+    {
+     "label": "v_top  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_bot  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_side  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_far  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_soft  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    },
+    {
+     "label": "v_quart  (via v_total)",
+     "opaque": false,
+     "kinds": []
+    }
+   ],
+   "unknown_functions": [],
+   "opaque_spans": []
+  },
+  "selection_table": [],
+  "official": null,
+  "export_blockers": [
+   {
+    "code": "OFF001",
+    "message": "the installed Desmond parser has not been run on this text, so nothing here may be called Desmond-valid"
+   }
+  ]
+ }
+]

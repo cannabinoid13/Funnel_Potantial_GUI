@@ -1,0 +1,390 @@
+{
+  "profile_name": "AChE_G4N_G5N_WT_Funnel_v1",
+  "description": "Frozen protein-relative funnel + WT-MetaD protocol validated on AChE-G4N and reused byte-for-byte on AChE-G5N. Geometry is locked to the protein-attached O/U/V frame, NOT to lab coordinates.",
+  "desmond_version_tag": "Desmond 2025-3",
+  "ligand": {
+    "chain": "B",
+    "resname": "LIG1",
+    "resnum": 1
+  },
+  "frame_groups": {
+    "O": {
+      "chain": "A",
+      "residues": [
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405
+      ],
+      "expect_resnames": [
+        "SER",
+        "ASP",
+        "VAL",
+        "VAL",
+        "GLY",
+        "ASP",
+        "HIS"
+      ],
+      "atoms": [
+        "N",
+        "CA",
+        "C",
+        "O"
+      ],
+      "note": "structured helix; away from binding site"
+    },
+    "U": {
+      "chain": "A",
+      "residues": [
+        528,
+        529,
+        530,
+        531,
+        532,
+        533
+      ],
+      "expect_resnames": [
+        "ALA",
+        "CYX",
+        "ALA",
+        "PHE",
+        "TRP",
+        "ASN"
+      ],
+      "atoms": [
+        "N",
+        "CA",
+        "C",
+        "O"
+      ],
+      "note": "structured helix; Cys529 disulfide-stabilized region"
+    },
+    "V": {
+      "chain": "A",
+      "residues": [
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430
+      ],
+      "expect_resnames": [
+        "ARG",
+        "VAL",
+        "TYR",
+        "ALA",
+        "TYR",
+        "VAL",
+        "PHE"
+      ],
+      "atoms": [
+        "N",
+        "CA",
+        "C",
+        "O"
+      ],
+      "note": "structured beta strand"
+    }
+  },
+  "axis_uvw": [
+    -0.41674239298662524,
+    -0.8969215372880964,
+    -0.14784293637688242
+  ],
+  "origin_uvw": [
+    -10.418147459550303,
+    2.0068810215727364,
+    -8.260348044606244
+  ],
+  "funnel": {
+    "z_min": -0.9313,
+    "z_cc": 23.4485,
+    "z_max": 28.948553856514945,
+    "r_cyl": 4.110265665681823,
+    "cone_slope": 0.40890707118416053,
+    "k_rad": 29.0,
+    "k_z": 50.0
+  },
+  "well_tempered": {
+    "dimension": 1,
+    "kernel_cutoff": 9.0,
+    "h0": 0.25,
+    "sigma_z": 0.5,
+    "hill_interval_ps": 2.0,
+    "cvseq_interval_ps": 2.0,
+    "bias_factor_gamma": 15,
+    "ktemp_kcalmol": 8.624466483
+  },
+  "production": {
+    "time_ps": 200000.0,
+    "temperature_K": 310.0,
+    "pressure_bar": 1.01325,
+    "ensemble": "NPT-MTK",
+    "thermostat_tau": 1.0,
+    "barostat_tau": 2.0,
+    "timestep": [
+      0.002,
+      0.002,
+      0.006
+    ],
+    "cutoff_radius": 9.0,
+    "seed": 2007,
+    "trajectory_interval_ps": 20.0,
+    "eneseq_interval_ps": 2.0,
+    "simbox_interval_ps": 2.0,
+    "checkpoint_interval_ps": 500.0,
+    "maeff_interval_ps": 1000.0
+  },
+  "monitors": [
+    {
+      "label": "Asp74",
+      "chain": "A",
+      "resnum": 74,
+      "resname": "ASP",
+      "atoms": [
+        "CB",
+        "CG",
+        "OD1",
+        "OD2"
+      ]
+    },
+    {
+      "label": "Trp86",
+      "chain": "A",
+      "resnum": 86,
+      "resname": "TRP",
+      "atoms": [
+        "CB",
+        "CG",
+        "CD1",
+        "CD2",
+        "NE1",
+        "CE2",
+        "CE3",
+        "CZ2",
+        "CZ3",
+        "CH2"
+      ]
+    },
+    {
+      "label": "Tyr124",
+      "chain": "A",
+      "resnum": 124,
+      "resname": "TYR",
+      "atoms": [
+        "CB",
+        "CG",
+        "CD1",
+        "CD2",
+        "CE1",
+        "CE2",
+        "CZ",
+        "OH"
+      ]
+    },
+    {
+      "label": "Trp286",
+      "chain": "A",
+      "resnum": 286,
+      "resname": "TRP",
+      "atoms": [
+        "CB",
+        "CG",
+        "CD1",
+        "CD2",
+        "NE1",
+        "CE2",
+        "CE3",
+        "CZ2",
+        "CZ3",
+        "CH2"
+      ]
+    },
+    {
+      "label": "Phe297",
+      "chain": "A",
+      "resnum": 297,
+      "resname": "PHE",
+      "atoms": [
+        "CB",
+        "CG",
+        "CD1",
+        "CD2",
+        "CE1",
+        "CE2",
+        "CZ"
+      ]
+    },
+    {
+      "label": "Tyr337",
+      "chain": "A",
+      "resnum": 337,
+      "resname": "TYR",
+      "atoms": [
+        "CB",
+        "CG",
+        "CD1",
+        "CD2",
+        "CE1",
+        "CE2",
+        "CZ",
+        "OH"
+      ]
+    },
+    {
+      "label": "Phe338",
+      "chain": "A",
+      "resnum": 338,
+      "resname": "PHE",
+      "atoms": [
+        "CB",
+        "CG",
+        "CD1",
+        "CD2",
+        "CE1",
+        "CE2",
+        "CZ"
+      ]
+    },
+    {
+      "label": "Tyr341",
+      "chain": "A",
+      "resnum": 341,
+      "resname": "TYR",
+      "atoms": [
+        "CB",
+        "CG",
+        "CD1",
+        "CD2",
+        "CE1",
+        "CE2",
+        "CZ",
+        "OH"
+      ]
+    }
+  ],
+  "gate_atoms": {
+    "tyr124_oh": {
+      "chain": "A",
+      "resnum": 124,
+      "atom": "OH"
+    },
+    "phe338_ce2": {
+      "chain": "A",
+      "resnum": 338,
+      "atom": "CE2"
+    },
+    "asp74_od2": {
+      "chain": "A",
+      "resnum": 74,
+      "atom": "OD2"
+    },
+    "tyr341_oh": {
+      "chain": "A",
+      "resnum": 341,
+      "atom": "OH"
+    },
+    "tyr337_oh": {
+      "chain": "A",
+      "resnum": 337,
+      "atom": "OH"
+    }
+  },
+  "gates": [
+    {
+      "output": "gate_Y124OH_F338CE2_A",
+      "var": "gate_y124_f338",
+      "a": "tyr124_oh",
+      "b": "phe338_ce2"
+    },
+    {
+      "output": "gate_D74OD2_Y341OH_A",
+      "var": "gate_d74_y341",
+      "a": "asp74_od2",
+      "b": "tyr341_oh"
+    },
+    {
+      "output": "gate_Y124OH_Y337OH_A",
+      "var": "gate_y124_y337",
+      "a": "tyr124_oh",
+      "b": "tyr337_oh"
+    }
+  ],
+  "rotamer": {
+    "label": "Tyr337",
+    "chain": "A",
+    "resnum": 337,
+    "atoms": [
+      "N",
+      "CA",
+      "CB",
+      "CG",
+      "CD1"
+    ],
+    "var": "tyr337_rot"
+  },
+  "protonation_sentinels": [
+    {
+      "chain": "A",
+      "resnum": 396,
+      "resname": "GLH",
+      "atom": "CA"
+    },
+    {
+      "chain": "A",
+      "resnum": 447,
+      "resname": "HIS",
+      "atom": "CA"
+    },
+    {
+      "chain": "A",
+      "resnum": 450,
+      "resname": "GLH",
+      "atom": "CA"
+    },
+    {
+      "chain": "A",
+      "resnum": 494,
+      "resname": "ASP",
+      "atom": "CA"
+    }
+  ],
+  "reference": {
+    "cross_ligand_equivalence_sha256": "9fff95be335bd37b2d0a7bf18ef9ca8f1b4e9e5f7a26b7a06cfa39cea785a2f3",
+    "normalized_reference_pot_sha256": "7ff59c32300e538998c6684b53160ad787b9fee2083751af21f804c60d8427b9",
+    "reference_G4N_cms_sha256": "b24c0c3a642c7dbd7fc038632bf1344fcec7969dc5198db54debef4377755c8c"
+  },
+  "reference_system": {
+    "label": "AChE-G5N",
+    "atom_count": 43306,
+    "box_A": [
+      79.667851,
+      82.136076,
+      70.262673
+    ],
+    "ligand_heavy_atoms": 31,
+    "ligand_aid_range": "8287-8317",
+    "ligand_formula": "C21N6O4",
+    "initial_z_A": 1.7928037378538633,
+    "initial_rho_A": 1.1104785591125947,
+    "initial_allowed_radius_A": 12.965432998689773,
+    "frame_pair_lengths_A": [
+      11.099178118396539,
+      18.30666882230337,
+      18.67734983221616
+    ],
+    "protonation": {
+      "396": "GLH",
+      "447": "HIS",
+      "450": "GLH",
+      "494": "ASP"
+    },
+    "cms_sha256": "e2cbcaf02fc24e5685e88b099e1d3db894d8dafe609875e6c799e33ec5f8103d",
+    "physical_geometry_sha256": "1ae8498da4fe37a8c714017d006950165b4060608fd0ac64003981d360b7354e"
+  }
+}

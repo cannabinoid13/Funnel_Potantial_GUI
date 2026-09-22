@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=FunnelForge
+GenericName=Desmond Funnel-MetaD designer
+Comment=Design and verify well-tempered funnel-metadynamics potentials for Desmond
+Exec=/home/bugra/Claude/potantial/funnelforge.sh %f
+Path=/home/bugra/Claude/potantial
+Terminal=false
+Categories=Science;Chemistry;Education;
+MimeType=chemical/x-cms;

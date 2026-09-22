@@ -10,7 +10,6 @@ Reference job: `funnel_metadaynamics_ayrilma_Z5_run.{pot,msj,cfg,sh,cms}`
 (62,870 atoms, an 85.8 × 86.6 × 89.1 Å SPC water box, Z5 ligand = chain B /
 LIG, 72 heavy atoms).
 
-![Check and validation](docs/01-check-and-verification.png)
 
 ---
 
